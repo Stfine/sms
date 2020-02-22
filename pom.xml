@@ -1,0 +1,151 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sinco</groupId>
+	<artifactId>messager</artifactId>
+	<version>0.0.6-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>messager</name>
+	<properties>
+		<java.version>1.7</java.version>
+		<source.level>1.7</source.level>
+		<java.encoding>UTF-8</java.encoding>
+		<aspectj.version>1.7.4</aspectj.version>
+	</properties>
+	<dependencies>
+		<!-- ================================================= -->
+		<!-- 日志及相关依赖（用slf4j+logback代替jcl+log4j） -->
+		<!-- ================================================= -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- ================================================= -->
+		<!-- 单元测试 -->
+		<!-- ================================================= -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<type>jar</type>
+			<scope>test</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sinco</groupId>
+			<artifactId>sinco-common</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.1</version>
+		</dependency>
+<!-- 		阿里大鱼短信平台 -->
+		<dependency>
+		  <groupId>com.taobao</groupId>
+		  <artifactId>alidayu</artifactId>
+		  <version>1.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.aliyun</groupId>
+		    <artifactId>aliyun-java-sdk-core</artifactId>
+		    <version>3.3.1</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.aliyun</groupId>
+		  <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+		  <version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>com.aliyun</groupId>
+		  <artifactId>aliyun-java-sdk-dysmsapi-inter</artifactId>
+		  <version>1.0.0</version>
+		</dependency>
+		
+<!-- 		阿里大鱼信平台 -->
+
+		<!-- jackson json -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.29</version>
+		</dependency>
+		<dependency>
+			<groupId>org.nutz</groupId>
+			<artifactId>nutz</artifactId>
+			<version>1.b.40</version>
+		</dependency>
+		
+		<!--  腾讯云 -->
+		<dependency>
+		  <groupId>com.github.qcloudsms</groupId>
+		  <artifactId>qcloudsms</artifactId>
+		  <version>1.0.6</version>
+		</dependency>
+		
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-archetype-plugin</artifactId>
+				<version>2.0-alpha-4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>utf-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<attach>true</attach>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>local-nexus</id>
+			<url>http://mvn.thinker.vc/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>local-nexus</id>
+			<url>http://mvn.thinker.vc/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>local-nexus</id>
+			<url>http://mvn.thinker.vc/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
