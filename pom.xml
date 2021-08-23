@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
-			<version>1.8.1</version>
+			<version>1.14.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sinco</groupId>
@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
-			<version>1.8.1</version>
+			<version>1.14.2</version>
 		</dependency>
 <!-- 		阿里大鱼短信平台 -->
 		<dependency>
